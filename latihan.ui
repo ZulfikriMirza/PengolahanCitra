@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>696</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="loadButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>280</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imgLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>281</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="grayButton">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>280</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gray</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imgLabel2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>20</y>
+      <width>281</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="saveButton">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>300</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <zorder>imgLabel</zorder>
+   <zorder>grayButton</zorder>
+   <zorder>imgLabel2</zorder>
+   <zorder>saveButton</zorder>
+   <zorder>loadButton</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>696</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOperation">
+    <property name="title">
+     <string>Operation</string>
+    </property>
+    <addaction name="actionBrightness"/>
+    <addaction name="actionContrast"/>
+    <addaction name="actionContrastScretch"/>
+    <addaction name="actionNegative"/>
+    <addaction name="actionBiner"/>
+    <addaction name="actiongrayHistogram"/>
+    <addaction name="actionRGBHistogram"/>
+    <addaction name="actionEqualHistogram"/>
+   </widget>
+   <widget class="QMenu" name="menuOperation2">
+    <property name="title">
+     <string>Operation2</string>
+    </property>
+    <widget class="QMenu" name="menuRotasi">
+     <property name="title">
+      <string>Rotasi</string>
+     </property>
+     <addaction name="actionrot45derajat"/>
+     <addaction name="actionmin45derajat"/>
+     <addaction name="actionrot90derajat"/>
+     <addaction name="actionmin90derajat"/>
+     <addaction name="actionrot180derajat"/>
+     <addaction name="actionmin180derajat"/>
+    </widget>
+    <widget class="QMenu" name="menuResize">
+     <property name="title">
+      <string>Resize</string>
+     </property>
+     <addaction name="actionZoomIn"/>
+     <addaction name="actionZoomOut"/>
+     <addaction name="actionSkewedImage"/>
+    </widget>
+    <addaction name="menuRotasi"/>
+    <addaction name="actionTranslasi"/>
+    <addaction name="menuResize"/>
+    <addaction name="actionCrop"/>
+    <addaction name="actionAritmatika"/>
+    <addaction name="actionBoolean"/>
+   </widget>
+   <widget class="QMenu" name="menuSpasial">
+    <property name="title">
+     <string>Spasial</string>
+    </property>
+    <addaction name="actionFilter"/>
+    <addaction name="actionMean"/>
+    <addaction name="actionGaussian"/>
+    <addaction name="actionSharpening"/>
+    <addaction name="actionMedian"/>
+    <addaction name="actionMax"/>
+   </widget>
+   <widget class="QMenu" name="menuDeteksi">
+    <property name="title">
+     <string>Deteksi</string>
+    </property>
+    <addaction name="actionSobel"/>
+    <addaction name="actionPrewit"/>
+    <addaction name="actionRobert"/>
+    <addaction name="actionLaplace"/>
+    <addaction name="actionLaplaceOfGaussian"/>
+    <addaction name="actionCanny"/>
+    <addaction name="actionDilasi"/>
+    <addaction name="actionErosi"/>
+    <addaction name="actionOpening"/>
+    <addaction name="actionClosing"/>
+    <addaction name="actionSkeleton"/>
+   </widget>
+   <widget class="QMenu" name="menuH">
+    <property name="title">
+     <string>H</string>
+    </property>
+    <addaction name="actionBinary"/>
+    <addaction name="actionBinaryInvers"/>
+    <addaction name="actionTrunc"/>
+    <addaction name="actionToZero"/>
+    <addaction name="actionToZeroInvers"/>
+    <addaction name="actionOtsu"/>
+   </widget>
+   <addaction name="menuOperation"/>
+   <addaction name="menuOperation2"/>
+   <addaction name="menuSpasial"/>
+   <addaction name="menuDeteksi"/>
+   <addaction name="menuH"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionBrightness">
+   <property name="text">
+    <string>Brightness</string>
+   </property>
+  </action>
+  <action name="actionContrast">
+   <property name="text">
+    <string>Contrast</string>
+   </property>
+  </action>
+  <action name="actionContrastScretch">
+   <property name="text">
+    <string>ContrastScretch</string>
+   </property>
+  </action>
+  <action name="actionNegative">
+   <property name="text">
+    <string>Negative</string>
+   </property>
+  </action>
+  <action name="actionBiner">
+   <property name="text">
+    <string>Biner</string>
+   </property>
+  </action>
+  <action name="actiongrayHistogram">
+   <property name="text">
+    <string>grayHistogram</string>
+   </property>
+  </action>
+  <action name="actionRGBHistogram">
+   <property name="text">
+    <string>RGBHistogram</string>
+   </property>
+  </action>
+  <action name="actionEqualHistogram">
+   <property name="text">
+    <string>EqualHistogram</string>
+   </property>
+  </action>
+  <action name="actionrot45derajat">
+   <property name="text">
+    <string>rot45derajat</string>
+   </property>
+  </action>
+  <action name="actionmin45derajat">
+   <property name="text">
+    <string>min45derajat</string>
+   </property>
+  </action>
+  <action name="actionrot90derajat">
+   <property name="text">
+    <string>rot90derajat</string>
+   </property>
+  </action>
+  <action name="actionmin90derajat">
+   <property name="text">
+    <string>min90derajat</string>
+   </property>
+  </action>
+  <action name="actionrot180derajat">
+   <property name="text">
+    <string>rot180derajat</string>
+   </property>
+  </action>
+  <action name="actionmin180derajat">
+   <property name="text">
+    <string>min180derajat</string>
+   </property>
+  </action>
+  <action name="actionTranslasi">
+   <property name="text">
+    <string>Translasi</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="actionSkewedImage">
+   <property name="text">
+    <string>Skewed Image</string>
+   </property>
+  </action>
+  <action name="actionCrop">
+   <property name="text">
+    <string>Crop</string>
+   </property>
+  </action>
+  <action name="actionCrop2">
+   <property name="text">
+    <string>Crop2</string>
+   </property>
+  </action>
+  <action name="actionAritmatika">
+   <property name="text">
+    <string>Aritmatika</string>
+   </property>
+  </action>
+  <action name="actionBoolean">
+   <property name="text">
+    <string>Boolean</string>
+   </property>
+  </action>
+  <action name="actionFilter">
+   <property name="text">
+    <string>Filter</string>
+   </property>
+  </action>
+  <action name="actionMean">
+   <property name="text">
+    <string>Mean</string>
+   </property>
+  </action>
+  <action name="actionGaussian">
+   <property name="text">
+    <string>Gaussian</string>
+   </property>
+  </action>
+  <action name="actionSharpening">
+   <property name="text">
+    <string>Sharpening</string>
+   </property>
+  </action>
+  <action name="actionMedian">
+   <property name="text">
+    <string>Median</string>
+   </property>
+  </action>
+  <action name="actionMax">
+   <property name="text">
+    <string>Max</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionPrewit">
+   <property name="text">
+    <string>Prewit</string>
+   </property>
+  </action>
+  <action name="actionRobert">
+   <property name="text">
+    <string>Robert</string>
+   </property>
+  </action>
+  <action name="actionLaplace">
+   <property name="text">
+    <string>Laplace</string>
+   </property>
+  </action>
+  <action name="actionLaplaceOfGaussian">
+   <property name="text">
+    <string>Laplace Of Gaussian</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny</string>
+   </property>
+  </action>
+  <action name="actionDilasi">
+   <property name="text">
+    <string>Dilasi</string>
+   </property>
+  </action>
+  <action name="actionErosi">
+   <property name="text">
+    <string>Erosi</string>
+   </property>
+  </action>
+  <action name="actionOpening">
+   <property name="text">
+    <string>Opening</string>
+   </property>
+  </action>
+  <action name="actionClosing">
+   <property name="text">
+    <string>Closing</string>
+   </property>
+  </action>
+  <action name="actionBinary">
+   <property name="text">
+    <string>Binary</string>
+   </property>
+  </action>
+  <action name="actionBinaryInvers">
+   <property name="text">
+    <string>BinaryInvers</string>
+   </property>
+  </action>
+  <action name="actionTrunc">
+   <property name="text">
+    <string>Trunc</string>
+   </property>
+  </action>
+  <action name="actionToZero">
+   <property name="text">
+    <string>ToZero</string>
+   </property>
+  </action>
+  <action name="actionToZeroInvers">
+   <property name="text">
+    <string>ToZeroInvers</string>
+   </property>
+  </action>
+  <action name="actionSkeleton">
+   <property name="text">
+    <string>Skeleton</string>
+   </property>
+  </action>
+  <action name="actionOtsu">
+   <property name="text">
+    <string>Otsu</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
